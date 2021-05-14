@@ -1,18 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 function Userform() {
   const name = useRef();
   const age = useRef();
-  
+  const [nameError, setNameError] = useState('');
+  const [ageError, setAgeError] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('hello submit');
     console.log(name.current.value);
     console.log(age.current.value);
 
-    if(!name.current.value) {
-
+    if (!name.current.value) {
+      setNameError('Name field should be required');
+    } else if (name.current.value.length > 20) {
+      setNameError('Name field must be less then 20 characters');
     }
+    ///fetch
   };
 
   return (
@@ -22,7 +27,7 @@ function Userform() {
         <div>
           <label htmlFor="name">Name: </label>
           <input id="name" ref={name} type="text" />
-          <div>Error</div>
+          <div style={{ color: 'red' }}>{nameError}</div>
         </div>
         <div>
           <label htmlFor="age ">Age: </label>
