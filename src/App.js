@@ -3,6 +3,7 @@ import Userform from './Userform';
 import UserFromwithFormik from './UserFromwithFormik';
 import UserFromwithFormikContext from './UserFromwithFormikContext';
 import UserFromwithFormikValidation from './UserFromwithFormikValidation';
+import UserFormikwithMaterialUI from './UserFormikwithMaterialUI';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <UserFromwithFormik />
       <UserFromwithFormikValidation />
       <UserFromwithFormikContext />
+      <UserFormikwithMaterialUI />
     </div>
   );
 }

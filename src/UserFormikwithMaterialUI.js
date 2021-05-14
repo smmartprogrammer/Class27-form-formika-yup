@@ -1,8 +1,9 @@
 import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
+import TextField from '@material-ui/core/TextField';
 
-function UserFromwithFormikContext() {
+function UserFormikwithMaterialUI() {
   return (
     <div>
       <div>User Form</div>
@@ -28,7 +29,15 @@ function UserFromwithFormikContext() {
           <Form onSubmit={formik.handleSubmit}>
             <div>
               <label htmlFor="name">Name: </label>
-              <Field type="text" name="name" id="name" />
+              {/* <TextField id="standard-basic" label="Standard" /> */}
+              <Field
+                type="text"
+                as={TextField}
+                label="Name::"
+                variant="outlined"
+                name="name"
+                id="name"
+              />
               <ErrorMessage
                 name="name"
                 render={(msg) => <span style={{ color: 'blue' }}>{msg} </span>}
@@ -36,7 +45,14 @@ function UserFromwithFormikContext() {
             </div>
             <div>
               <label htmlFor="age ">Age: </label>
-              <Field type="number" name="age" id="age" />
+              <Field
+                type="number"
+                name="age"
+                as={TextField}
+                label="Name::"
+                variant="outlined"
+                id="age"
+              />
               <ErrorMessage name="age" />
             </div>
             <div>
@@ -49,4 +65,4 @@ function UserFromwithFormikContext() {
   );
 }
 
-export default UserFromwithFormikContext;
+export default UserFormikwithMaterialUI;
